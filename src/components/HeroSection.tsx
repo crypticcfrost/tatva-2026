@@ -27,7 +27,9 @@ const HeroSection = () => {
       alignItems="center"
       justifyContent="center"
       overflow="hidden"
-      bg={colorMode === 'dark' ? '#0a0e27' : '#f5f5f5'}
+      bg={colorMode === 'dark' 
+        ? 'linear-gradient(180deg, #0a0e27 0%, #0f1629 100%)'
+        : 'linear-gradient(180deg, #fafafa 0%, #ffffff 100%)'}
     >
       <ParticleBackground />
       
@@ -51,16 +53,18 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <Text
-            fontSize={{ base: '4xl', md: '6xl', lg: '8xl' }}
-            fontWeight="bold"
+            fontSize={{ base: '5xl', md: '7xl', lg: '9xl' }}
+            fontWeight="900"
             textAlign="center"
             bgGradient={
               colorMode === 'dark'
-                ? 'linear(to-r, indian.saffron, yellow.400, indian.green)'
+                ? 'linear(to-r, indian.saffron, yellow.300, indian.green)'
                 : 'linear(to-r, indian.saffron, indian.blue, indian.green)'
             }
             bgClip="text"
-            mb={4}
+            mb={6}
+            letterSpacing="tight"
+            lineHeight="1"
           >
             TATVA 2026
           </Text>
@@ -73,9 +77,10 @@ const HeroSection = () => {
         >
           <Text
             fontSize={{ base: 'xl', md: '2xl', lg: '3xl' }}
-            color={colorMode === 'dark' ? 'gray.300' : 'gray.600'}
+            color={colorMode === 'dark' ? 'gray.400' : 'gray.500'}
             textAlign="center"
-            fontStyle="italic"
+            fontWeight="500"
+            letterSpacing="wide"
           >
             The Spirit of India
           </Text>

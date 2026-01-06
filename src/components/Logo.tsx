@@ -1,4 +1,4 @@
-import { Box, useColorMode } from '@chakra-ui/react'
+import { Box, Image, useColorMode } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 interface LogoProps {
@@ -29,6 +29,9 @@ const Logo = ({ size = '200px', animated = true }: LogoProps) => {
     },
   }
 
+  // Use logo from public/images
+  const logoPath = '/images/tatva-logo-dark.png'
+
   return (
     <motion.div
       variants={animated ? logoVariants : undefined}
@@ -44,38 +47,48 @@ const Logo = ({ size = '200px', animated = true }: LogoProps) => {
         alignItems="center"
         justifyContent="center"
       >
-        {/* Simplified Logo Representation - You can replace this with actual logo SVG */}
-        <Box
+        {/* Use actual logo image */}
+        <Image
+          src={logoPath}
+          alt="TATVA 2026 Logo"
           width="100%"
           height="100%"
-          position="relative"
-          bg={isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}
-          borderRadius="50%"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          border="3px solid"
-          borderColor={isDark ? 'indian.saffron' : 'indian.green'}
-          _before={{
-            content: '""',
-            position: 'absolute',
-            width: '80%',
-            height: '80%',
-            borderRadius: '50%',
-            border: '2px solid',
-            borderColor: isDark ? 'indian.green' : 'indian.saffron',
-          }}
-        >
-          <Box
-            fontSize="3xl"
-            fontWeight="bold"
-            color={isDark ? 'white' : 'gray.800'}
-            textAlign="center"
-            zIndex={2}
-          >
-            TATVA
-          </Box>
-        </Box>
+          objectFit="contain"
+          filter={isDark ? 'none' : 'brightness(0.2)'}
+          fallback={
+            <Box
+              width="100%"
+              height="100%"
+              position="relative"
+              bg={isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}
+              borderRadius="50%"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              border="3px solid"
+              borderColor={isDark ? 'indian.saffron' : 'indian.green'}
+              _before={{
+                content: '""',
+                position: 'absolute',
+                width: '80%',
+                height: '80%',
+                borderRadius: '50%',
+                border: '2px solid',
+                borderColor: isDark ? 'indian.green' : 'indian.saffron',
+              }}
+            >
+              <Box
+                fontSize="3xl"
+                fontWeight="bold"
+                color={isDark ? 'white' : 'gray.800'}
+                textAlign="center"
+                zIndex={2}
+              >
+                TATVA
+              </Box>
+            </Box>
+          }
+        />
         
         {/* Indian Flag Colors Arc */}
         <Box
@@ -94,4 +107,3 @@ const Logo = ({ size = '200px', animated = true }: LogoProps) => {
 }
 
 export default Logo
-

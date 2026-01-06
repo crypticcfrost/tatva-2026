@@ -30,23 +30,38 @@ const Navigation = () => {
         zIndex: 1000,
         opacity: isScrolled ? opacity : 0,
         y: isScrolled ? y : -100,
-        backdropFilter: 'blur(10px)',
-        background: bg,
-        borderBottom: `1px solid ${borderColor}`,
+        backdropFilter: 'blur(20px) saturate(180%)',
+        background: colorMode === 'dark' 
+          ? 'rgba(10, 14, 39, 0.8)' 
+          : 'rgba(255, 255, 255, 0.8)',
+        borderBottom: `1px solid ${colorMode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)'}`,
+        boxShadow: isScrolled 
+          ? (colorMode === 'dark' 
+              ? '0 8px 32px rgba(0, 0, 0, 0.3)' 
+              : '0 8px 32px rgba(0, 0, 0, 0.1)')
+          : 'none',
       }}
     >
       <Flex
         maxW="7xl"
         mx="auto"
-        px={8}
-        py={4}
+        px={{ base: 4, md: 8 }}
+        py={5}
         alignItems="center"
         justifyContent="space-between"
       >
-        <Logo size="50px" animated={false} />
-        <Flex gap={4} alignItems="center">
+        <Logo size="80px" animated={false} />
+        <Flex gap={3} alignItems="center">
           <Button
             variant="ghost"
+            size="md"
+            fontWeight="medium"
+            fontSize="md"
+            _hover={{
+              bg: colorMode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+              transform: 'translateY(-2px)',
+            }}
+            transition="all 0.2s"
             onClick={() => {
               const eventsSection = document.getElementById('events')
               eventsSection?.scrollIntoView({ behavior: 'smooth' })
@@ -54,7 +69,17 @@ const Navigation = () => {
           >
             Events
           </Button>
-          <Button onClick={toggleColorMode} variant="ghost">
+          <Button 
+            onClick={toggleColorMode} 
+            variant="ghost"
+            size="md"
+            fontSize="xl"
+            _hover={{
+              bg: colorMode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+              transform: 'scale(1.1)',
+            }}
+            transition="all 0.2s"
+          >
             {colorMode === 'dark' ? '☀️' : '🌙'}
           </Button>
         </Flex>

@@ -4,6 +4,7 @@ export interface Event {
   type: string
   category: 'technical' | 'non-technical'
   animationType: string
+  imageUrl?: string
 }
 
 export const technicalEvents: Event[] = [
@@ -13,6 +14,7 @@ export const technicalEvents: Event[] = [
     type: 'Hackathon',
     category: 'technical',
     animationType: 'code',
+    imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80',
   },
   {
     id: 'yukti-pravaha',
@@ -20,6 +22,7 @@ export const technicalEvents: Event[] = [
     type: 'Coding Challenge',
     category: 'technical',
     animationType: 'coding',
+    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
   },
   {
     id: 'yantra-yuddha',
@@ -27,6 +30,7 @@ export const technicalEvents: Event[] = [
     type: 'Robo Knockout',
     category: 'technical',
     animationType: 'robot',
+    imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80',
   },
   {
     id: 'kala-srujana',
@@ -34,6 +38,7 @@ export const technicalEvents: Event[] = [
     type: 'AI Art Making',
     category: 'technical',
     animationType: 'art',
+    imageUrl: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
   },
 ]
 
@@ -44,6 +49,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Photo Battle',
     category: 'non-technical',
     animationType: 'camera',
+    imageUrl: 'https://images.unsplash.com/photo-1606983348286-bf55e8561885?w=800&q=80',
   },
   {
     id: 'bharat-baatein',
@@ -51,6 +57,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Family Feud',
     category: 'non-technical',
     animationType: 'quiz',
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
   },
   {
     id: 'astra-arena',
@@ -58,6 +65,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Freefire Max',
     category: 'non-technical',
     animationType: 'gaming',
+    imageUrl: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
   },
   {
     id: 'bhojana-yuddha',
@@ -65,6 +73,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Hogathon',
     category: 'non-technical',
     animationType: 'food',
+    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9c836a?w=800&q=80',
   },
   {
     id: 'tez-talaash',
@@ -72,6 +81,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Beg, Borrow, Steal',
     category: 'non-technical',
     animationType: 'treasure',
+    imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80',
   },
   {
     id: 'vega-patha',
@@ -79,6 +89,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'F1 Simulator',
     category: 'non-technical',
     animationType: 'racing',
+    imageUrl: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
   },
   {
     id: 'khel-niyojan',
@@ -86,6 +97,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Mock IPL',
     category: 'non-technical',
     animationType: 'cricket',
+    imageUrl: 'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=800&q=80',
   },
   {
     id: 'natya-utsav',
@@ -93,6 +105,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Dance Trance',
     category: 'non-technical',
     animationType: 'dance',
+    imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
   },
   {
     id: 'yodha-yudd',
@@ -100,6 +113,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'BGMI / COD',
     category: 'non-technical',
     animationType: 'battle',
+    imageUrl: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
   },
   {
     id: 'guhya-patha',
@@ -107,6 +121,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Escape Room',
     category: 'non-technical',
     animationType: 'maze',
+    imageUrl: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
   },
   {
     id: 'kshanika',
@@ -114,6 +129,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Minute to Win It',
     category: 'non-technical',
     animationType: 'timer',
+    imageUrl: 'https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80',
   },
 ]
 

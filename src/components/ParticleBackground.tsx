@@ -9,6 +9,7 @@ interface Particle {
   size: number
   duration: number
   delay: number
+  xOffset: number
 }
 
 const ParticleBackground = () => {
@@ -20,14 +21,24 @@ const ParticleBackground = () => {
       ? ['#FF9933', '#FFFFFF', '#138808', '#FFD700']
       : ['#FF9933', '#000080', '#138808', '#FF6B6B']
     
-    const newParticles: Particle[] = Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 4 + 2,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
-    }))
+    const newParticles: Particle[] = Array.from({ length: 30 }, (_, i) => {
+      const randomX = Math.random() * 100
+      const randomY = Math.random() * 100
+      const randomSize = Math.random() * 4 + 2
+      const randomDuration = Math.random() * 3 + 2
+      const randomDelay = Math.random() * 2
+      const randomXOffset = Math.random() * 20 - 10
+      
+      return {
+        id: i,
+        x: randomX,
+        y: randomY,
+        size: randomSize,
+        duration: randomDuration,
+        delay: randomDelay,
+        xOffset: randomXOffset,
+      }
+    })
     setParticles(newParticles)
   }, [colorMode])
 
@@ -58,7 +69,7 @@ const ParticleBackground = () => {
           }}
           animate={{
             y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
+            x: [0, particle.xOffset, 0],
             scale: [1, 1.2, 1],
           }}
           transition={{
