@@ -49,7 +49,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Photo Battle',
     category: 'non-technical',
     animationType: 'camera',
-    imageUrl: 'https://images.unsplash.com/photo-1606983348286-bf55e8561885?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'bharat-baatein',
@@ -73,7 +73,7 @@ export const nonTechnicalEvents: Event[] = [
     type: 'Hogathon',
     category: 'non-technical',
     animationType: 'food',
-    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9c836a?w=800&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9c836a?auto=format&fit=crop&w=1200&q=80&sat=-10',
   },
   {
     id: 'tez-talaash',
